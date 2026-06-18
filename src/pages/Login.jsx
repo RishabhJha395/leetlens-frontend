@@ -38,7 +38,7 @@ export const Login = () => {
     setLoading(true);
     setError('');
     try {
-      const res = await axios.post('http://localhost:5000/api/v1/auth/login', { email, password }, { withCredentials: true });
+      const res = await axios.post(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/v1/auth/login`, { email, password }, { withCredentials: true });
       await handleSuccess(res.data.user, res.data.tokens);
     } catch (err) {
       setError(err.response?.data?.message || 'Login failed');
@@ -67,7 +67,7 @@ export const Login = () => {
           headers: { Authorization: `Bearer ${tokenResponse.access_token}` },
         });
         
-        const res = await axios.post('http://localhost:5000/api/v1/auth/google-login', { 
+        const res = await axios.post(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/v1/auth/google-login`, { 
           email: userInfo.data.email,
           name: userInfo.data.name,
           googleId: userInfo.data.sub,

@@ -65,7 +65,7 @@ export const getUserProfile = async (username) => {
       }
     `;
 
-    const res = await fetchWithRetry('http://localhost:5000/api/v1/leetcode/graphql', 3, {
+    const res = await fetchWithRetry(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/v1/leetcode/graphql`, 3, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ query, variables: { username } })
@@ -202,7 +202,7 @@ export const getFriendsList = async (username) => {
   try {
     const fetchFriends = async (queryName) => {
       const q = `query { ${queryName}(userSlug: "${username}") { users { userSlug, realName, userAvatar } } }`;
-      const res = await fetchWithRetry('http://localhost:5000/api/v1/leetcode/graphql', 3, {
+      const res = await fetchWithRetry(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/v1/leetcode/graphql`, 3, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ query: q })
@@ -251,7 +251,7 @@ export const saveSnapshot = async (profileData) => {
     const accessToken = localStorage.getItem('accessToken');
     if (!accessToken) return;
     
-    await fetch('http://localhost:5000/api/v1/leetcode/snapshot', {
+    await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/v1/leetcode/snapshot`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -274,7 +274,7 @@ export const getHistory = async () => {
     const accessToken = localStorage.getItem('accessToken');
     if (!accessToken) return [];
     
-    const res = await fetch('http://localhost:5000/api/v1/leetcode/history', {
+    const res = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/v1/leetcode/history`, {
       headers: {
         'Authorization': `Bearer ${accessToken}`
       }

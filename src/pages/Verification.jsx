@@ -37,7 +37,7 @@ export const Verification = () => {
     try {
       const accessToken = localStorage.getItem('accessToken');
       const res = await axios.post(
-        'http://localhost:5000/api/v1/auth/verify-leetcode', 
+        `${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/v1/auth/verify-leetcode`, 
         { leetcodeUsername }, 
         { 
           withCredentials: true,

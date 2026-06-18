@@ -7,7 +7,7 @@ export const analyzeProfile = async (profileData) => {
     // Check if we use the global axios instance from services/api.js or fetch directly
     const token = localStorage.getItem('accessToken') || localStorage.getItem('token');
     
-    const response = await fetch('http://localhost:5000/api/v1/ai/generate', {
+    const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/v1/ai/generate`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

@@ -31,7 +31,7 @@ export const ResetPassword = () => {
     setLoading(true);
     setError('');
     try {
-      const res = await axios.patch(`http://localhost:5000/api/v1/auth/reset-password/${token}`, { password });
+      const res = await axios.patch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/v1/auth/reset-password/${token}`, { password });
       
       // Auto login on success
       const { user, tokens } = res.data;
