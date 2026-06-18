@@ -1,3 +1,4 @@
+
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { fetchUserAndFriendsData, saveSnapshot } from '../services/api';
 import { analyzeProfile } from '../lib/analytics';
