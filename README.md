@@ -1,16 +1,58 @@
-# React + Vite
+# LeetLens - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+LeetLens is a modern, dynamic web application designed to track, analyze, and visualize LeetCode profiles. It provides deep AI-driven insights, head-to-head comparisons, study notes, and goal tracking to help developers level up their algorithmic skills.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Profile Analytics**: Visualize your LeetCode progress, acceptance rates, and topic mastery using beautiful charts (Recharts).
+- **AI Insights**: Get personalized learning roadmaps and weakness analysis powered by AI.
+- **Head-to-Head Comparison**: Compare your algorithmic expertise and contest ratings against friends using interactive bar charts.
+- **Goal Tracking & Study Notes**: Built-in tools to manage your daily coding targets and interview notes.
+- **Authentication**: Secure JWT-based login, Google OAuth integration, and email verification.
+- **Modern UI**: Fully responsive, sleek dark-mode aesthetic with fluid micro-animations powered by Tailwind CSS and Framer Motion.
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Framework**: React.js (via Vite)
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion
+- **Data Visualization**: Recharts
+- **Authentication**: `@react-oauth/google`, Axios (with credentials)
+- **Routing**: React Router DOM
 
-## Expanding the ESLint configuration
+## ⚙️ Environment Variables
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Create a `.env` file in the `client` directory:
+
+```env
+# URL of your deployed backend or local server
+VITE_API_URL=http://localhost:5000
+
+# Your Google OAuth Client ID
+VITE_GOOGLE_CLIENT_ID=your_google_client_id
+```
+
+## 📦 Installation & Setup
+
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+2. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+3. Build for production:
+   ```bash
+   npm run build
+   ```
+
+## 🌐 Deployment
+
+This frontend is optimized for deployment on **Vercel**. 
+Make sure to add the `VITE_API_URL` to your Vercel Environment Variables pointing to your production backend URL.
+
+---
+*Made with ❤️ by Rishabh Jha*
