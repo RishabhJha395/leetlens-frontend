@@ -59,7 +59,7 @@ export const Compare = () => {
       <motion.div 
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        className="p-8 max-w-7xl mx-auto flex flex-col items-center justify-center min-h-[50vh] text-center"
+        className="p-4 md:p-8 max-w-7xl mx-auto flex flex-col items-center justify-center min-h-[50vh] text-center"
       >
         <div className="text-6xl mb-4">👥</div>
         <h1 className="text-3xl font-bold mb-2">No Friends Found</h1>
@@ -99,7 +99,7 @@ export const Compare = () => {
   }, [profileA, profileB]);
 
   return (
-    <div className="p-8 max-w-7xl mx-auto flex flex-col lg:flex-row gap-6">
+    <div className="p-4 md:p-8 max-w-7xl mx-auto flex flex-col lg:flex-row gap-6">
       {/* Sidebar for Friend Selection */}
       <div className="lg:w-1/4 space-y-4">
         <h2 className="text-xl font-bold mb-4">Select Friend</h2>
@@ -136,7 +136,7 @@ export const Compare = () => {
             <p className="text-slate-400">Loading {selectedFriendUsername}'s profile data...</p>
           </div>
         ) : errorFriend ? (
-          <div className="flex flex-col items-center justify-center min-h-[40vh] text-center bg-red-900/10 border border-red-500/20 rounded-2xl p-8">
+          <div className="flex flex-col items-center justify-center min-h-[40vh] text-center bg-red-900/10 border border-red-500/20 rounded-2xl p-4 md:p-8">
             <div className="text-4xl mb-4">⚠️</div>
             <h2 className="text-xl font-bold text-red-400 mb-2">Error Fetching Profile</h2>
             <p className="text-slate-300">{errorFriend}</p>
@@ -145,7 +145,7 @@ export const Compare = () => {
           <>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Profile A */}
-              <Card className="flex flex-col items-center text-center p-8 bg-blue-500/5 border-blue-500/20">
+              <Card className="flex flex-col items-center text-center p-4 md:p-8 bg-blue-500/5 border-blue-500/20">
                 <img src={profileA.profilePicture} alt={profileA.username} className="w-24 h-24 rounded-full border-2 border-blue-500 mb-4 bg-slate-800" />
                 <h2 className="text-2xl font-bold">{profileA.realName || profileA.username}</h2>
                 <span className="text-blue-400 mb-4">@{profileA.username}</span>
@@ -154,7 +154,7 @@ export const Compare = () => {
               </Card>
 
               {/* Profile B */}
-              <Card className="flex flex-col items-center text-center p-8 bg-emerald-500/5 border-emerald-500/20">
+              <Card className="flex flex-col items-center text-center p-4 md:p-8 bg-emerald-500/5 border-emerald-500/20">
                 <img src={profileB.profilePicture || `https://assets.leetcode.com/users/default_avatar.jpg`} alt={profileB.username} className="w-24 h-24 rounded-full border-2 border-emerald-500 mb-4 bg-slate-800" />
                 <h2 className="text-2xl font-bold">{profileB.realName || profileB.username}</h2>
                 <span className="text-emerald-400 mb-4">@{profileB.username}</span>
@@ -222,7 +222,7 @@ export const Compare = () => {
                   colors={['#3b82f6', '#10b981']}
                 />
               ) : (
-                <Card className="flex items-center justify-center p-8 text-slate-500">No expertise data to compare</Card>
+                <Card className="flex items-center justify-center p-4 md:p-8 text-slate-500">No expertise data to compare</Card>
               )}
             </div>
           </>

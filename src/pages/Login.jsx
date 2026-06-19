@@ -92,7 +92,7 @@ export const Login = () => {
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="w-full max-w-md bg-slate-900/80 p-8 rounded-2xl border border-slate-800 backdrop-blur-sm shadow-xl"
+        className="w-full max-w-md bg-slate-900/80 p-6 md:p-8 rounded-2xl border border-slate-800 backdrop-blur-sm shadow-xl"
       >
         <h2 className="text-3xl font-bold mb-2">Welcome Back</h2>
         <p className="text-slate-400 mb-6">Login to continue analyzing your LeetCode journey.</p>

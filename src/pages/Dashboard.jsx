@@ -61,7 +61,7 @@ export const Dashboard = () => {
     <motion.div 
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
-      className="p-8 space-y-6 max-w-7xl mx-auto"
+      className="p-4 md:p-8 space-y-6 max-w-7xl mx-auto"
     >
       <div className="flex items-center justify-between mb-2">
         <h1 className="text-3xl font-bold">Overview</h1>

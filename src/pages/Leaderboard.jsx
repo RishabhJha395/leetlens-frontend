@@ -74,7 +74,7 @@ export const Leaderboard = () => {
     <motion.div 
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
-      className="p-8 space-y-6 max-w-7xl mx-auto"
+      className="p-4 md:p-8 space-y-6 max-w-7xl mx-auto"
     >
       <div className="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
         <h1 className="text-3xl font-bold">Friends Leaderboard</h1>
@@ -99,7 +99,7 @@ export const Leaderboard = () => {
             </thead>
             <tbody>
               {leaderboardUsers.length === 0 ? (
-                 <tr><td colSpan="4" className="p-8 text-center text-slate-400">No data available</td></tr>
+                 <tr><td colSpan="4" className="p-4 md:p-8 text-center text-slate-400">No data available</td></tr>
               ) : leaderboardUsers.map((user, i) => (
                 <tr key={i} className={`border-b border-slate-800/50 transition-colors ${user.username === profileData.username ? 'bg-blue-500/10 hover:bg-blue-500/20' : 'hover:bg-slate-800/30'}`}>
                   <td className="p-4">

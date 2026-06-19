@@ -42,7 +42,7 @@ export const History = () => {
     <motion.div 
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
-      className="p-8 space-y-6 max-w-4xl mx-auto"
+      className="p-4 md:p-8 space-y-6 max-w-4xl mx-auto"
     >
       <div className="flex items-center justify-between mb-6">
         <h1 className="text-3xl font-bold">Activity History</h1>
@@ -50,7 +50,7 @@ export const History = () => {
 
       <div className="space-y-6 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-700 before:to-transparent">
         {loading ? (
-          <div className="flex justify-center p-8 text-slate-400">Loading history...</div>
+          <div className="flex justify-center p-4 md:p-8 text-slate-400">Loading history...</div>
         ) : events.map((event, i) => (
           <div key={i} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
             <div className="flex items-center justify-center w-10 h-10 rounded-full border border-slate-700 bg-slate-900 text-blue-500 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
